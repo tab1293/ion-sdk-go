@@ -36,7 +36,7 @@ func CreatePipeline(codecName, pipelineSink string) *Pipeline {
 	case "vp9":
 		pipelineStr += " ! rtpvp9depay ! decodebin ! " + pipelineSink
 	case "h264":
-		pipelineStr += " ! rtph264depay ! decodebin ! " + pipelineSink
+		pipelineStr += " ! rtph264depay ! " + pipelineSink
 	case "g722":
 		pipelineStr += " clock-rate=8000 ! rtpg722depay ! decodebin ! " + pipelineSink
 	default:
